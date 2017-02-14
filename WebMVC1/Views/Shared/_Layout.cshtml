@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render(Links.Content.easyui_css)
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<body class="easyui-layout">
+    <div data-options="region:'north',border:false" style="padding:5px;">
+        <img src="@Links.Content.Image.Jiaxun_jpg" />
+        <div class="menu1">
+            <a href="javascript:return false;">首页</a>
+            <a href="javascript:return false;">关于我们</a>
+            <a href="javascript:return false;">产品与解决方案</a>
+            <a href="javascript:return false;">新闻中心</a>
+            <a href="javascript:return false;">投资者关系</a>
+            <a href="javascript:return false;">售后支持</a>
+            <a href="javascript:return false;">佳讯英才</a>
+        </div>
+    </div>
+    <div data-options="region:'west',split:true,title:' '" style="width:200px;padding:10px;"></div>
+    <div data-options="region:'center',title:' '">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render(Links.Scripts.jquery_easyui_min_js)
+    @RenderSection("scripts", required: false)
+</body>
+</html>

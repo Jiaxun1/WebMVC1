@@ -1,0 +1,21 @@
+﻿.header {
+    height: auto;
+}
+
+.menu1 {
+    background-color: black;
+    height: 30px;
+    line-height: 30px;
+}
+
+    .menu1 a {
+        color: white;
+        margin-left: 60px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration:none;
+    }
+
+        .menu1 a:hover {
+            color: red;
+        }
