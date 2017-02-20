@@ -20,13 +20,5 @@ namespace WebMVC1
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-
-        protected void Application_PostAuthenticateRequest(object sender, EventArgs e)
-        {
-            //var formsIdentity = HttpContext.Current.User.Identity as FormsIdentity;
-            //if (formsIdentity != null && formsIdentity.IsAuthenticated && formsIdentity.AuthenticationType == "Forms")
-            //{
-            //}
-        }
     }
 }

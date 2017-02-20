@@ -13,9 +13,22 @@
         margin-left: 60px;
         font-size: 16px;
         font-weight: bold;
-        text-decoration:none;
+        text-decoration: none;
     }
 
         .menu1 a:hover {
             color: red;
         }
+
+.loginBG {
+    background-color: lightblue;
+    padding: 20px 10px 2px 10px;
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin-left: -125px;
+    margin-top: -150px;
+    border-radius:3px;
+}

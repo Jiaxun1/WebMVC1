@@ -1,0 +1,35 @@
+﻿@{ Layout = null;}
+
+<html>
+<head>
+    @Styles.Render(Links.Content.Site_css)
+</head>
+<body>
+    <div class="loginBG">
+        @using (Html.BeginForm(MVC.Account.ActionNames.Login, MVC.Account.Name, FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>
+                        <span>User Name</span>
+                    </td>
+                    <td>
+                        <input type="text" name="userName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Password</span>
+                    </td>
+                    <td>
+                        <input type="password" name="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right"><input type="submit" value="Login" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

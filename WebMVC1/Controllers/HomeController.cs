@@ -8,9 +8,9 @@ using WebMVC1.Filters;
 
 namespace WebMVC1.Controllers
 {
-    //[AuthorizeFilter("role")]
+    [AuthorizeFilter]
     [RoutePrefix("Test")]
-    public partial class HomeController : Controller
+    public partial class HomeController : BaseController
     {
         private ITestService testService;
 
@@ -26,12 +26,6 @@ namespace WebMVC1.Controllers
         {
             var model = this.testService.GetPersons();
             return View(model);
-        }
-
-        [AllowAnonymous]
-        public virtual ActionResult Login()
-        {
-            return View();
         }
     }
 }
