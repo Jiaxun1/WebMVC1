@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using WebMVC1.Filters;
 
 namespace WebMVC1
 {
@@ -8,6 +9,7 @@ namespace WebMVC1
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new GlobalAuthorizationFilter());
         }
     }
 }

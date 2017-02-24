@@ -12,8 +12,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <body class="easyui-layout">
-    <div data-options="region:'north',border:false" style="padding:5px;">
-        <img src="@Links.Content.Image.Jiaxun_jpg" />
+    <div data-options="region:'north',border:false" style="padding: 5px;">
+        <div style="position:relative;">
+            <img src="@Links.Content.Image.Jiaxun_jpg" />
+            <div class="divName"><a href="javascript:return false;">@this.BaseController.CurrentUser.UserName</a></div>
+        </div>
         <div class="menu1">
             <a href="javascript:return false;">首页</a>
             <a href="javascript:return false;">关于我们</a>

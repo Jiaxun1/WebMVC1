@@ -240,6 +240,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Filters\AuthorizeFilter.cs" />
+    <Compile Include="Filters\GlobalAuthorizationFilter.cs" />
+    <Compile Include="Filters\WebViewStartHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

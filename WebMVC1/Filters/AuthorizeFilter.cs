@@ -21,16 +21,13 @@ namespace WebMVC1.Filters
 
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            if (httpContext.User.Identity.IsAuthenticated)
-                return true;
-            else
-                return false;
+            var bl = base.AuthorizeCore(httpContext);
+            return bl;
         }
 
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             filterContext.Result = new RedirectResult(FormsAuthentication.LoginUrl);
-            //base.HandleUnauthorizedRequest(filterContext);
         }
     }
 }
