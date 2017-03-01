@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DAL.Person>
+
+<table class="easyui-datagrid" style="width: 100%;" data-options="fitColumns:true,singleSelect:true">
+    <thead>
+        <tr>
+            <th data-options="field:'Id',width:200"><b>Id</b></th>
+            <th data-options="field:'Name',width:200"><b>Name</b></th>
+            <th data-options="field:'Company',width:200"><b>Company</b></th>
+            <th data-options="field:'Birth',width:200"><b>Birth</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+            {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Company</td>
+                <td>@p.Birth.ToLongDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

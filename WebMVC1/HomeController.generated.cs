@@ -73,12 +73,14 @@ namespace WebMVC1.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string GetGrid = "GetGrid";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string GetGrid = "GetGrid";
         }
 
 
@@ -111,6 +113,17 @@ namespace WebMVC1.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetGridOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult GetGrid()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetGrid);
+            GetGridOverride(callInfo);
             return callInfo;
         }
 

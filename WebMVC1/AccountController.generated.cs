@@ -91,8 +91,7 @@ namespace WebMVC1.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Login
         {
-            public readonly string userName = "userName";
-            public readonly string password = "password";
+            public readonly string model = "model";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -127,15 +126,14 @@ namespace WebMVC1.Controllers
         }
 
         [NonAction]
-        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string userName, string password);
+        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, WebMVC1.Models.LoginModel model);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Login(string userName, string password)
+        public override System.Web.Mvc.ActionResult Login(WebMVC1.Models.LoginModel model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userName", userName);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "password", password);
-            LoginOverride(callInfo, userName, password);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            LoginOverride(callInfo, model);
             return callInfo;
         }
 

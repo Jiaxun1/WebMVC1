@@ -24,8 +24,16 @@ namespace WebMVC1.Controllers
         [HttpGet]
         public virtual ActionResult Index()
         {
+            ViewBag.Hello = "Hello World";
             var model = this.testService.GetPersons();
             return View(model);
+        }
+
+        [ChildActionOnly]
+        public virtual ActionResult GetGrid()
+        {
+            var model = this.testService.GetPersons();
+            return PartialView(MVC.Shared.Views._Grid, model);
         }
     }
 }

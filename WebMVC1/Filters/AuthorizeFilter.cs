@@ -22,6 +22,7 @@ namespace WebMVC1.Filters
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
             var bl = base.AuthorizeCore(httpContext);
+
             return bl;
         }
 

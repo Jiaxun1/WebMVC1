@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using WebMVC1.Filters;
+using WebMVC1.Models;
 
 namespace WebMVC1.Controllers
 {
@@ -17,17 +18,19 @@ namespace WebMVC1.Controllers
         [Route("Login")]
         public virtual ActionResult Login()
         {
-            return View();
+            var model = new LoginModel();
+            return View(model);
         }
 
         [AllowAnonymous]
         [HttpPost]
         [Route("Login")]
-        public virtual ActionResult Login(string userName, string password)
+        public virtual ActionResult Login(LoginModel model)
         {
-            if (userName == "Tom" && password == "123")
+            //if (username == "Tom" && password == "123")
+            if (model.UserName == "Tom" && model.Password == "123")
             {
-                FormsAuthenticationTicket ticket = this.GetFormsAuthenticationTicket(userName, false, "");
+                FormsAuthenticationTicket ticket = this.GetFormsAuthenticationTicket(model.UserName, false, "");
                 HttpCookie ticketCookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(ticket));
 
                 DateTime? dateExpires = ticket.IsPersistent ? DateTime.UtcNow.AddMinutes(30) : new Nullable<DateTime>();
